@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        crossorigin="anonymous">
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+    crossorigin="anonymous">
+ <add name="ExtensionlessUrl-Integrated-4.0" path="*." verb="GET,HEAD,POST,DEBUG,**PUT,DELETE**" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+
+ <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top w3-light-grey" style="z-index:3;width:250px" id="mySidebar">
+
+  <img src="img/test.jpg" weight="10" height="200">
+  <div class="ws4 w3-justify w3-center">
+    <br>
+    <audio src="resources/offStringsAudio.mp3" id="my_audio" loop="loop"></audio>
+    <span>
+        <input id="stopButton" type="button" value="Stop audio" class="btn btn-danger"/>
+        <input id="playButton" type="button" value="Play audio" class="btn btn-success"/>
+    </span>
+<br>
+<br>
+ <h2>Search</h2>
+  </div>
+  <div class="w3-container w3-display-container w3-padding-16"> 
+   
+    <form class="dropdown show">
+    <select id="environmentSearch" class="btn btn-secondary dropdown-toggle event-type-select w3-light-grey"href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   
+    <option value="any">Select Environment</option>
+    <option value="indoors">Indoors</option>
+    <option value="outdoors">Outdoors</option>
+    <option value="beach">Beach</option>
+    <option value="elevator">Elevator</option>
+  </select>
+  </form>
+  <p> </p> 
+
+  <form class="dropdown show">
+    <select id="difficultySearch" class="btn btn-secondary dropdown-toggle event-type-select w3-light-grey"href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <option value="any">Difficulty</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    </form>
+    <p> </p> 
+    <form class="dropdown show">
+      <select id="participantsSearch" class="btn btn-secondary dropdown-toggle event-type-select w3-light-grey" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <option value="any">Participants</option>
+        <option value="1">1</option>
+        <option value="any">>1</option>
+      </select>
+      </form>
+      <p> </p> 
+      <button id="prankSearch" class="btn btn-secondary">Search</button>
+      
+  </div>
+  
+<br>
+<br>
+
+        <div class="ws4 w3-justify w3-center">
+        <h2>Store</h2>
+
+        <br>
+        <br>
+        <div class="w3-row-padding">
+            <div class="justify-content-center align-items-center">
+            <h4>Submit your Prank!</h4>
+            <form target="_blank">
+              <p><input id="in-prankName" class="form-control" type="text" placeholder="Name" name="Name" required></p>
+              <p><input id="in-description" class="form-control" type="text" placeholder="Description" name="Email" required></p>
+              <p><input id="in-participants" class="form-control" type="text" placeholder="Participants" name="Subject" required></p>
+              <p><input id="in-environment" class="form-control" type="text" placeholder="Environment" name="Message" required></p>
+              <p><input id="in-difficulty" class="form-control" type="text" placeholder="Difficulty" name="Message" required></p>
+              <p><input id="in-url" class="form-control" type="text" placeholder="URL" name="Message" required></p>
+            </form>
+          </div>
+        </div>
+        <button id="submitNewPrank" class="btn btn-danger">Submit Your Prank!</button>
+      </div>
+   
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">OPTIONS</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left"></p>
+    <p class="w3-right">
+      <i class="w3-margin-right"></i>
+      <i class=""></i>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-container w3-xlarge">
+    <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" width="100%" height="500px"></iframe>
+  </div>
+<div class="container">
+
+    <h1>Pranks List</h1>
+
+  <div class="pranks">
+    
+  </div>
+</div>
+  <!-- Product grid
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank1" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank2" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+
+    <div class="w3-third w3-container">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank3" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+  </div>
+
+   Second Photo Grid
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank4" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank5" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank6" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+  </div>
+
+   Third Photo Grid
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank7" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank8" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" alt="Norway" style="width:100%" class="w3-hover-opacity"></iframe>
+      <div class="w3-container w3-white">
+        <p><b>Lorem Ipsum</b></p>
+        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <button id="prank9" type="button" class="btn btn-outline-dark">See prank details</button>
+      </div>
+    </div>
+  </div>
+-->
+
+  <!-- Pagination
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+-->
+
+  <!-- Subscribe section
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Suggestions</h1>
+    <p>Help us to improve our PranksGuru website:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Suggestions</button>
+  </div>
+-->
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="justify-content-center align-items-center">
+        <h2>Contacts</h2>
+          <br>
+          <br>
+        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
+        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
+        <h4>We accept</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+       
+      </div>
+   
+      <div class="w3-col s4">
+        <h4></h4>
+  <!--      <p><a href="#">About us</a></p>
+        <p><a href="#">We're hiring</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Find store</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Return</a></p>
+        <p><a href="#">Help</a></p> -->
+      </div>
+
+
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24">Powered by Prank Gurus</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<>
+
+</>
+
+</body>
+</html>
