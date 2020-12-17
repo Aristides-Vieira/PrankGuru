@@ -1,6 +1,7 @@
 package org.academiadecodigo.offstring.prankguru.services;
 
 import org.academiadecodigo.offstring.prankguru.models.Prank;
+import org.academiadecodigo.offstring.prankguru.models.Review;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,7 +24,11 @@ public class PrankManager {
         if (prankList == null) {
             createPranks();
         }
-        return id <= prankList.size();
+        for (Prank p : prankList) {
+            if(p.getId().equals(id)) {
+                return true;
+            }
+        } return false;
     }
 
 
@@ -41,7 +46,7 @@ public class PrankManager {
     public List<Prank> createPranks() {
         prankList = new ArrayList<>();
         prankList.add(new Prank( 1,"bucketDoor", "Prank in the SuperMarket with a BUCKET! The looks on peoples faces is priceless!!", "1", "indoors", "easy", "https://www.youtube.com/embed/TRyMBMGW58A?start=67" ));
-        prankList.add(new Prank( 2,"Throwing stuff in the Supermarket", "Throwing things at Strangers in the SuperMarket! It's raining things, and we don't know where's coming from!", "1", "indoors", "medium", "https://www.youtube.com/embed/Zjs5G7O8ydw?start=115"));
+        prankList.add(new Prank( 2,"Supermarket", "Throwing things at Strangers in the SuperMarket! It's raining things, and we don't know where's coming from!", "1", "indoors", "medium", "https://www.youtube.com/embed/Zjs5G7O8ydw?start=115"));
         prankList.add(new Prank( 3,"Telekinetic event", "What if telekinesis was real? How would you react? Ab hidden camera experiment captures the reactions of unsuspecting customers at a New York City coffee shop as they witness a telekinetic event.", "5", "indoors", "hard", "https://www.youtube.com/embed/VlOxlSOr3_M?start=39" ));
         prankList.add(new Prank( 4,"Adjacent toilet", "As any good boardroom, this one has an adjacent toilet for the convenience of all meeting attendees.", "5", "outdoor", "easy", "https://www.youtube.com/embed/xAEaA31EdtU"));
         prankList.add(new Prank( 5,"Car Lift", "What if you had the strength to lift a car with your bare hands? We gave that power to Jenni and dressed her up as a New York City meter maid. Hidden cameras captured the reactions of people witnessing her teaching a rude cab driver a lesson.", "2", "outdoor", "medium", "https://www.youtube.com/embed/U7zb7qnZBvs?start=26" ));
@@ -52,6 +57,10 @@ public class PrankManager {
         prankList.add(new Prank( 10,"privacy", "SORRY CAN I HAVE MY PRIVACY ?", "1", "elevator", "easy", "https://www.youtube.com/embed/TWwM5NphmeI?start=30"));
         prankList.add(new Prank( 11,"Busy elevator", "Please take the stairs, elevator is busy!", "1", "elevator", "medium", "https://www.youtube.com/embed/YIMLrkBQhZU" ));
         prankList.add(new Prank( 12,"elevator fly", "WHAT IF YOU CAN FLY TO THE SKY IN ELEVATOR?", "1", "elevator", "hard", "https://www.youtube.com/embed/fSK5MuI6M6I?start=40"));
+
+        Prank prank = getPrank(1);
+        prank.createReview("My name is Earl","ChickenFoot","5","+18");
+
         return prankList;
     }
 
@@ -70,5 +79,25 @@ public class PrankManager {
             }
         }
         return filteredPrankList;
+    }
+
+    public void addReview(Integer id, String username, String title, String stars, String content) {
+        Prank prank =null;
+        for (Prank prank1 : prankList) {
+            if(prank1.getId().equals(id)){
+                prank = prank1;
+            }
+        }
+        prank.createReview(username, title, stars, content);
+    }
+
+    public Prank getPrank(Integer id) {
+       Prank prank = null;
+        for (Prank pranks : prankList) {
+            if(pranks.getId().equals(id)) {
+                prank = pranks;
+            }
+        }
+        return prank;
     }
 }

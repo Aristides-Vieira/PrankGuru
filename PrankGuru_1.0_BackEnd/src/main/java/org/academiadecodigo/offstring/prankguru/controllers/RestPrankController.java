@@ -2,6 +2,7 @@ package org.academiadecodigo.offstring.prankguru.controllers;
 
 import org.academiadecodigo.offstring.prankguru.models.Prank;
 import org.academiadecodigo.offstring.prankguru.models.PrankDto;
+import org.academiadecodigo.offstring.prankguru.models.Review;
 import org.academiadecodigo.offstring.prankguru.services.PrankManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class RestPrankController {
         }
 
         if (prankManager.exists(id)) {
-            Prank prank = prankManager.getPrankList().get(id - 1);
+           Prank prank =  prankManager.getPrank(id);
             return new ResponseEntity<>(prank, HttpStatus.OK);
 
         } else {
@@ -74,6 +75,18 @@ public class RestPrankController {
         List<Prank> prankList = prankManager.getPrankList();
 
         return new ResponseEntity<>(prankList, HttpStatus.CREATED);
+    }
+
+    @RequestMapping( method = RequestMethod.POST, value = "/{id}/addreview", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Review>> addReview(@RequestBody Review reviewDto, @PathVariable Integer id) {
+
+        Prank prank = prankManager.getPrank(id);
+
+        prank.createReview(reviewDto.getUsername(), reviewDto.getTitle(), reviewDto.getStars(), reviewDto.getContent());
+
+        List<Review> list = prank.getReviews();
+
+        return new ResponseEntity<>(list, HttpStatus.CREATED);
     }
 
 }
