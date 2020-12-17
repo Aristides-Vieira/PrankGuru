@@ -4,6 +4,7 @@ $(document).ready(function() {
     getPranks();
     submitPrank();
     search();
+    store();
     $('#playButton').hide();
     document.getElementById("my_audio").play();
     document.getElementById('stopButton').onclick = function() {
@@ -52,11 +53,11 @@ var counter = 0;
         if(counter = 0) {
 
             $('.pranks').append(
-             '<div class="w3-row-padding">' + 
-             '<div class="w3-third w3-container w3-margin-bottom">'+
-             '<iframe src="' + prank.url +'" alt="URL" style="width:100%" class="w3-hover-opacity"></iframe>'+
+   
+             '<div class="w3-third w3-col w3-container s4 w3-margin-bottom">'+
+             '<iframe src="' + prank.url +'" style="width:100%" alt="URL" class="w3-hover-opacity"></iframe>'+
              '<div class="w3-container w3-white">'+
-             '<p> '+ prank.description +'</p>'+
+             '<p> '+ prank.prankName +'</p>'+
              '<button id="prank'+prank.id+'" type="button" class="btn btn-outline-dark">See prank details</button>'+
              '</div>'
              );
@@ -64,42 +65,39 @@ var counter = 0;
     
            } else if (counter = 1) {
             $('.pranks').append(
-                '<div class="w3-third w3-container w3-margin-bottom">'+
-             '<iframe src="' + prank.url +'" alt="URL" style="width:100%" class="w3-hover-opacity"></iframe>'+
+                '<div class="w3-third w3-col w3-container s4 w3-margin-bottom">'+
+             '<iframe src="' + prank.url +'" style="width:100%"  alt="URL"  class="w3-hover-opacity"></iframe>'+
              '<div class="w3-container w3-white">'+
-             '<p> '+ prank.description +'</p>'+
+             '<p> '+ prank.prankName +'</p>'+
              '<button id="prank'+prank.id+'" type="button" class="btn btn-outline-dark">See prank details</button>'+
              '</div>') 
                 counter++
            } else {
             $('.pranks').append(
-                '<div class="w3-third w3-container w3-margin-bottom">'+
-             '<iframe src="' + prank.url +'" alt="URL" style="width:100%" class="w3-hover-opacity"></iframe>'+
+                '<div class="w3-third w3-col s4 w3-container">'+
+             '<iframe src="' + prank.url +'" style="width:100%" alt="URL" class="w3-hover-opacity"></iframe>'+
              '<div class="w3-container w3-white">'+
-             '<p> '+ prank.description +'</p>'+
+             '<p> '+ prank.prankName +'</p>'+
              '<button id="prank'+prank.id+'" type="button" class="btn btn-outline-dark">See prank details</button>'+
-             '</div>' +
-                '</div>') 
+             '</div>') 
                 counter = 0;
            }
 
 
         
-           $('#prank' + prank.id).click(function(event){
-    
-            $.ajax({
-                contentType: 'application/json',
-                url: 'http://127.0.0.1:8080/prankguru/api/prank/'+ prank.id,
-                type: 'DELETE',
-                success: function() {
-                    $('.pranks').empty();
-                    getPranks();
-                },
-                error: errorCallback
-            })
-        })
+           $('#prank' + prank.id).click(function() {
+
+            window.location = 'prank.html?url='+prank.url+'&description='+prank.description;
+           });
     });
 };
+
+var store = function() {
+    $('#btn-store').click(function() {
+
+        window.location = 'store.html';
+       });
+}
 
 
 var search = function () {
