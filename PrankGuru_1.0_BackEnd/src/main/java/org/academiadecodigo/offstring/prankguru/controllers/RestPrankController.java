@@ -78,7 +78,7 @@ public class RestPrankController {
     }
 
     @RequestMapping( method = RequestMethod.POST, value = "/{id}/addreview", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Review>> addReview(@RequestBody Review reviewDto, @PathVariable Integer id) {
+    public ResponseEntity<?> addReview(@RequestBody Review reviewDto, @PathVariable Integer id) {
 
         Prank prank = prankManager.getPrank(id);
 
@@ -86,7 +86,7 @@ public class RestPrankController {
 
         List<Review> list = prank.getReviews();
 
-        return new ResponseEntity<>(list, HttpStatus.CREATED);
+        return new ResponseEntity<>( HttpStatus.CREATED);
     }
 
 }

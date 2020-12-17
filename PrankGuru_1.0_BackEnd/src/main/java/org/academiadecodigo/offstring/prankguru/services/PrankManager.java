@@ -60,6 +60,7 @@ public class PrankManager {
 
         Prank prank = getPrank(1);
         prank.createReview("My name is Earl","ChickenFoot","5","+18");
+        prank.createReview("My name is Earl","ChickenFoot","5","+18");
 
         return prankList;
     }

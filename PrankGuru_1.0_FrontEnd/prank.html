@@ -68,6 +68,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <div id="description-div"></div>
   </div>
   
+   <!-- Description -->
+   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="">
+    <h2 class="w3-text-black">Reviews</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+   <div id="div-review"></div>
+
+
+  </div>
+  
 
   <!-- Comment your experience -->
   <div class="w3-padding-64 w3-content w3-text-black" id="contact">
@@ -75,20 +85,20 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
 
 
-    <p>Let's get in touch. Send me a message:</p>
+    <p>Send review here:</p>
 
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+    <form>
+      <p><input id="in-username" class="form-control" type="text" placeholder="Username" required name="Username"></p>
+      <p><input id="in-title" class="form-control" type="text" placeholder="Title" required name="Title"></p>
+      <p><input id="in-stars" class="form-control" type="text" placeholder="Stars" required name="Stars"></p>
+      <p><input id="in-content" class="form-control" type="text" placeholder="Content" required name="Content"></p>
       <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        <button id="submit-review" class="" type="submit">
+       SEND REVIEW
         </button>
       </p>
     </form>
-  <!-- End Contact Section -->
+  <!-- End Contact Section --> 
   </div>
   
     <!-- Footer -->

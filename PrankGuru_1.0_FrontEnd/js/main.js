@@ -87,7 +87,7 @@ var counter = 0;
         
            $('#prank' + prank.id).click(function() {
 
-            window.location = 'prank.html?url='+prank.url+'&description='+prank.description;
+            window.location = 'prank.html?url='+prank.id;
            });
     });
 };
@@ -117,7 +117,7 @@ var search = function () {
 var submitPrank = function() {
     $('#submitNewPrank').click(function(event){
         $.ajax({
-            url: API_URL + '/addprank',
+            url: API_URL + '/addprank'
             type: 'POST',
             data: JSON.stringify({
                 id: 0, 
