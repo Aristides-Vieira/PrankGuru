@@ -27,7 +27,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
     <script src="js/main.js"></script>
-
+    <script src="css/main.css"></script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous">
@@ -55,19 +55,19 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
         <img height="240"" src="resources/prank.png">
 
     <br>
+    <p></p>
     <audio src="resources/offStringsAudio.mp3" id="my_audio" loop="loop"></audio>
     <span>
         <input id="stopButton" type="button" value="Stop audio" class="btn btn-danger"/>
         <input id="playButton" type="button" value="Play audio" class="btn btn-success"/>
     </span>
 <br>
-<br>
  <h2>Search</h2>
   </div>
-  <div class="w3-container w3-display-container w3-padding-16"> 
+  <div class="w3-container w3-display-container w3-padding-16 w3-center"> 
    
     <form class="dropdown show">
-    <select id="environmentSearch" class="btn btn-secondary dropdown-toggle event-type-select w3-light-grey"href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <select id="environmentSearch" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    
     <option value="any">Select Environment</option>
     <option value="indoors">Indoors</option>
@@ -79,8 +79,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <p> </p> 
 
   <form class="dropdown show">
-    <select id="difficultySearch" class="btn btn-secondary dropdown-toggle event-type-select w3-light-grey"href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <option value="any">Difficulty</option>
+    <select id="difficultySearch" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <option value="any">Select Difficulty</option>
       <option value="easy">Easy</option>
       <option value="medium">Medium</option>
       <option value="hard">Hard</option>
@@ -88,20 +88,21 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     </form>
     <p> </p> 
     <form class="dropdown show">
-      <select id="participantsSearch" class="btn btn-secondary dropdown-toggle event-type-select w3-light-grey" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <option value="any">Participants</option>
+      <select id="participantsSearch" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <option value="any">Select Participants</option>
         <option value="1">1</option>
         <option value="any">>1</option>
       </select>
       </form>
       <p> </p> 
-      <button id="prankSearch" class="btn btn-secondary">Search</button>
+      <button id="prankSearch" class="btn btn-secondary ">Search</button>
   </div>
 <br>
 
         <div class="ws4 w3-justify w3-center">
-        <button id="btn-store">Store</button>
-
+        <button id="btn-store" class="btn btn-info"><h4>
+          Store
+        </h4></button>
         <br>
         <br>
         <div class="w3-row-padding">
@@ -110,9 +111,34 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
             <form target="_blank">
               <p><input id="in-prankName" class="form-control" type="text" placeholder="Name" name="Name" required></p>
               <p><input id="in-description" class="form-control" type="text" placeholder="Description" name="Email" required></p>
-              <p><input id="in-participants" class="form-control" type="text" placeholder="Participants" name="Subject" required></p>
-              <p><input id="in-environment" class="form-control" type="text" placeholder="Environment" name="Message" required></p>
-              <p><input id="in-difficulty" class="form-control" type="text" placeholder="Difficulty" name="Message" required></p>
+              <p>
+              <select id="in-participants" class="form-control"href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option value="any">Select Environment</option>
+                <option value="indoors">indoors</option>
+                <option value="outdoors">outdoors</option>
+                <option value="beach">beach</option>
+                <option value="elevator">elevator</option>
+              </select>
+              </form></p>
+
+              <p>
+              <form class="dropdown show">
+                <select id="in-difficulty" class="form-control"href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <option value="any">Select Difficulty</option>
+                  <option value="easy">easy</option>
+                  <option value="medium">medium</option>
+                  <option value="hard">hard</option>
+                </select>
+                </form></p>
+
+              <p> <form class="dropdown show">
+                <select id="in-participants" class="form-control" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <option value="any">Select Participants</option>
+                  <option value="1">1</option>
+                  <option value="any">any</option>
+                </select>
+                </form></p>
+
               <p><input id="in-url" class="form-control" type="text" placeholder="URL" name="Message" required></p>
             </form>
           </div>
@@ -132,7 +158,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px">
+<div class="w3-main w3-light-grey" style="margin-left:250px">
 
   <!-- Push down content on small screens -->
   <div class="w3-hide-large" style="margin-top:83px"></div>
@@ -148,7 +174,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
   <!-- Image header -->
   <div class="w3-container w3-xlarge">
-    <iframe src="https://www.youtube.com/embed/wPuVlj-DRvs" width="100%" height="500px"></iframe>
+    <iframe src="https://www.youtube.com/embed/snTlMy80c_E" width="100%" height="500px"></iframe>
   </div>
 <div class="container">
 
@@ -161,58 +187,24 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   </div>
 </div>
   <!-- Footer -->
-  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
-    <div class="w3-row-padding">
-      <div class="justify-content-center align-items-center">
+  <footer class="w3-padding-64 w3-light-grey" id="footer">
+    <div class="w3-row-padding w3-center s4">
+      <div class="">
         <h2>Contacts</h2>
           <br>
           <br>
-        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
-        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
-        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
-        <h4>We accept</h4>
-        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
-        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
-        <br>
-        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
-        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
-        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
-        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+        <p><i class="fa fa-fw fa-map-marker"></i> Prank Gurus
+        <i class="fa fa-fw fa-phone"></i> 0044123123
+        <i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
        
-      </div>
-   
-      <div class="w3-col s4">
-        <h4></h4>
- 
-      </div>
-
+        </div>
 
     </div>
   </footer>
 
   <div class="w3-black w3-center w3-padding-24">Powered by Prank Gurus</a></div>
 
-  <!-- End page content -->
 </div>
-
-<!-- Newsletter Modal -->
-<div id="newsletter" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
-    <div class="w3-container w3-white w3-center">
-      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
-      <h2 class="w3-wide">NEWSLETTER</h2>
-      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
-    </div>
-  </div>
-</div>
-
-<>
-
-</>
 
 </body>
 </html>
