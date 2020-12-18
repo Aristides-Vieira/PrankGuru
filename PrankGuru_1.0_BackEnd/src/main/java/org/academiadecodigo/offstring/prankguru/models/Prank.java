@@ -24,10 +24,16 @@ public class Prank {
         this.url = url;
         reviews = new ArrayList<>();
     }
-
+/*
     public void createReview(String username, String title, String stars, String content) {
         Integer reviewId = reviews.size() + 1;
         Review newReview = new Review(reviewId, username, title, stars, content);
+        reviews.add(newReview);
+    }*/
+
+    public void createReview(Integer id, String username, String title, String stars, String content) {
+
+        Review newReview = new Review(id, username, title, stars, content);
         reviews.add(newReview);
     }
 

@@ -59,8 +59,8 @@ public class PrankManager {
         prankList.add(new Prank( 12,"elevator fly", "WHAT IF YOU CAN FLY TO THE SKY IN ELEVATOR?", "1", "elevator", "hard", "https://www.youtube.com/embed/fSK5MuI6M6I?start=40"));
 
         Prank prank = getPrank(1);
-        prank.createReview("My name is Earl","ChickenFoot","5","+18");
-        prank.createReview("My name is Earl","ChickenFoot","5","+18");
+        prank.createReview(1,"My name is Earl","ChickenFoot","5","+18");
+        prank.createReview(2,"My name is Earl","ChickenFoot","5","+18");
 
         return prankList;
     }
@@ -83,13 +83,24 @@ public class PrankManager {
     }
 
     public void addReview(Integer id, String username, String title, String stars, String content) {
-        Prank prank =null;
+        Prank prank = null;
+
         for (Prank prank1 : prankList) {
             if(prank1.getId().equals(id)){
                 prank = prank1;
             }
         }
-        prank.createReview(username, title, stars, content);
+
+        List<Review> listReviews = prank.getReviews();
+        Integer size = listReviews.size();
+        Integer reviewId;
+        if (size != 0) {
+            reviewId = listReviews.get(size - 1).getId();
+        } else {
+            reviewId = 0;
+        }
+
+        prank.createReview(reviewId + 1,username, title, stars, content);
     }
 
     public Prank getPrank(Integer id) {

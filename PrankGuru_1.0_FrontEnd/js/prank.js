@@ -53,17 +53,21 @@ function errorCallback(request, status, error){
 var submitReview = function() {
    
     $('#submit-review').click(function(event){
-       
+        console.log(  $('#in-username').val())
+               console.log($('#in-title').val())
+                console.log($('#in-stars').val())
+                console.log($('#in-content').val())
         $.ajax({
             url: API_URL + idUrl +'/addreview',
             type: 'POST',
             data: JSON.stringify({
                 id: 0, 
-                userName: $('#in-username').val(),
+                username: $('#in-username').val(),
                 title: $('#in-title').val(),
                 stars: $('#in-stars').val(),
                 content: $('#in-content').val()
             }),
+            dataType: 'json',
             contentType: 'application/json',
             success: window.location = 'prank.html?url=' + idUrl,
             error: errorCallback
